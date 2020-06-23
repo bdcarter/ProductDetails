@@ -6,7 +6,6 @@ out/
 .DS_Store
 # Ignore Gradle GUI config
 gradle-app.setting
-application.properties
 # Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
 !gradle-wrapper.jar
 

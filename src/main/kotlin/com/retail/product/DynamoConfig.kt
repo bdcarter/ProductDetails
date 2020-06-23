@@ -4,6 +4,7 @@ import com.amazonaws.auth.AWSCredentials
 import com.amazonaws.auth.AWSCredentialsProvider
 import com.amazonaws.auth.AWSStaticCredentialsProvider
 import com.amazonaws.auth.BasicAWSCredentials
+import com.amazonaws.client.builder.AwsClientBuilder
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper
@@ -18,6 +19,9 @@ import org.springframework.context.annotation.Primary
 @Configuration
 @EnableDynamoDBRepositories
 class DynamoConfig {
+
+    @Value("\${amazon.dynamodb.endpoint}")
+    lateinit var endpoint: String
 
     @Value("\${amazon.aws.accesskey}")
     lateinit var amazonAwsAccessKey: String
@@ -42,10 +46,20 @@ class DynamoConfig {
 
     @Bean
     fun amazonDynamoDB(): AmazonDynamoDB {
-        return AmazonDynamoDBClientBuilder
-            .standard()
-            .withCredentials(amazonAWSCredentialsProvider())
-            .withRegion(region).build()
+        return if (endpoint.isNotEmpty()){
+             AmazonDynamoDBClientBuilder
+                .standard()
+                .withCredentials(amazonAWSCredentialsProvider())
+                .withEndpointConfiguration(
+                    AwsClientBuilder
+                        .EndpointConfiguration(endpoint, region)
+                ).build()
+        } else {
+            AmazonDynamoDBClientBuilder
+                .standard()
+                .withCredentials(amazonAWSCredentialsProvider())
+                .withRegion(region).build()
+        }
     }
 
     @Bean

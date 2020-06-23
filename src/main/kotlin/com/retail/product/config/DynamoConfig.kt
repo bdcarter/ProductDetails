@@ -1,4 +1,4 @@
-package com.retail.product
+package com.retail.product.config
 
 import com.amazonaws.auth.AWSCredentials
 import com.amazonaws.auth.AWSCredentialsProvider

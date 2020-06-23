@@ -1,8 +1,8 @@
-package com.retail.product
+package com.retail.product.service
 
-import com.amazonaws.Response
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.jayway.jsonpath.JsonPath
+import com.retail.product.client.ProductClient
 import com.retail.product.domain.Price
 import com.retail.product.domain.ProductWithPrice
 import com.retail.product.exception.PriceNotFoundException
@@ -10,7 +10,6 @@ import com.retail.product.repository.PriceRepository
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Service
-import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.client.HttpClientErrorException
 
 @Service

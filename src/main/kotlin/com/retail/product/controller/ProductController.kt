@@ -1,5 +1,6 @@
-package com.retail.product
+package com.retail.product.controller
 
+import com.retail.product.service.ProductService
 import org.springframework.web.bind.annotation.*
 
 @RestController

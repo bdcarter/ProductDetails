@@ -1,4 +1,4 @@
-package com.retail.product
+package com.retail.product.client
 
 import com.retail.product.exception.ProductNotFoundException
 import org.springframework.stereotype.Component

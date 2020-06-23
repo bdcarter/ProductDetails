@@ -1,4 +1,4 @@
-package com.retail.product
+package com.retail.product.config
 
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB
 import com.amazonaws.services.dynamodbv2.model.*
@@ -7,7 +7,6 @@ import com.retail.product.repository.PriceRepository
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.boot.CommandLineRunner
-import org.springframework.context.annotation.Profile
 import org.springframework.stereotype.Component
 
 @Component

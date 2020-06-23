@@ -1,0 +1,12 @@
+server:
+  servlet:
+    context-path: /product-details
+
+spring:
+  application:
+    name: product-details
+  profiles:
+    active: local
+  data:
+    mongodb:
+      uri: "mongodb://localhost:27017"

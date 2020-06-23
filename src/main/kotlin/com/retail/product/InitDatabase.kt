@@ -1,4 +1,4 @@
-package com.retail.product.config
+package com.retail.product
 
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB
 import com.amazonaws.services.dynamodbv2.model.*

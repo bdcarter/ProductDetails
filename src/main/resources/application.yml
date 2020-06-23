@@ -7,6 +7,3 @@ spring:
     name: product-details
   profiles:
     active: local
-  data:
-    mongodb:
-      uri: "mongodb://localhost:27017"

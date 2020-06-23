@@ -1,8 +1,7 @@
-package com.retail.product.service
+package com.retail.product
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.jayway.jsonpath.JsonPath
-import com.retail.product.client.ProductClient
 import com.retail.product.domain.Price
 import com.retail.product.domain.ProductWithPrice
 import com.retail.product.exception.PriceNotFoundException

@@ -14,7 +14,7 @@ class ProductClient(val restTemplate: RestTemplate) {
         return try {
             restTemplate.getForObject(url, String)
         } catch (ex: RestClientException) {
-            throw ProductNotFoundException(id)
+            throw ProductNotFoundException(id, ex.message!!)
         }
     }
 }

@@ -49,9 +49,10 @@ dependencies {
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.11.0'
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.11.0'
 
-    testCompile group: 'io.kotest', name: 'kotest-runner-junit5-jvm', version: '4.1.0.RC2'
-    testImplementation 'io.kotest:kotest-assertions-core-jvm:4.1.0.RC2'
-    testImplementation 'io.kotest:kotest-property-jvm:4.1.0.RC2'
+    testImplementation("io.kotest:kotest-runner-console-jvm:4.1.0")
+    testCompile group: 'io.kotest', name: 'kotest-runner-junit5-jvm', version: '4.1.0'
+    testImplementation 'io.kotest:kotest-assertions-core-jvm:4.1.0'
+    testImplementation 'io.kotest:kotest-property-jvm:4.1.0'
     testCompile group: 'io.mockk', name: 'mockk', version: '1.10.0'
 }
 
